@@ -1,0 +1,19 @@
+@import 'variables';
+
+.call-on-me {
+  width: 2em;
+
+  .sub-class {
+    body: blue;
+  }
+}
+
+.another-file {
+  .call-on-me {
+    width: 5em;
+  }
+}
+
+@for $i from 1 through $count {
+  .item-#{$i} { @extend .call-on-me; }
+}

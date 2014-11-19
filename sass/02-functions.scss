@@ -1,0 +1,10 @@
+@import 'variables';
+
+
+@function call_on_me($count) {
+  @return $count / 100 * 1%;
+}
+
+@for $i from 1 through $count {
+  .item-#{$i} { width: call_on_me($i); }
+}

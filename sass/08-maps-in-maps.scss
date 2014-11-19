@@ -1,0 +1,36 @@
+@import 'variables';
+
+$maps: (
+  'a': (
+    'even': 1em
+  ),
+  'b': (
+    'even': 2em
+  ),
+  'c': (
+    'even': 3em
+  ),
+  'd': (
+    'even': 4em
+  ),
+);
+
+
+@for $i from 1 through $count {
+  .item-#{$i} {
+    @if $i < 250 {
+      $map-two: map-get($maps, 'a');
+      width: map-get($map-two, 'even');
+    }
+    @else if $i < 500 {
+      $map-two: map-get($maps, 'b');
+      width: map-get($map-two, 'even');
+    } @else if $i < 750 {
+      $map-two: map-get($maps, 'c');
+      width: map-get($map-two, 'even');
+    } @else {
+      $map-two: map-get($maps, 'd');
+      width: map-get($map-two, 'even');
+    }
+  }
+}

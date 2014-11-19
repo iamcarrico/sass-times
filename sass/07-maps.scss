@@ -1,0 +1,24 @@
+@import 'variables';
+
+$maps: (
+  'a': 1em,
+  'b': 2em,
+  'c': 3em,
+  'd': 4em,
+);
+
+
+@for $i from 1 through $count {
+  .item-#{$i} {
+    @if $i < 250 {
+      width: map-get($maps, 'a');
+    }
+    @else if $i < 500 {
+      width: map-get($maps, 'b');
+    } @else if $i < 750 {
+      width: map-get($maps, 'c');
+    } @else {
+      width: map-get($maps, 'd');
+    }
+  }
+}

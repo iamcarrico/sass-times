@@ -1,0 +1,18 @@
+@import 'variables';
+
+$stack: 10;
+
+@function call_on_me($input) {
+  $output: $input + 1em;
+
+  @if $output < $stack {
+    @return call_on_me($output);
+  }
+
+  @return $output;
+}
+
+
+@for $i from 1 through $count {
+  .item-#{$i} { width: call_on_me(0em); }
+}

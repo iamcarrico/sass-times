@@ -1,0 +1,20 @@
+@import 'variables';
+
+@mixin call_on_me() {
+  width: 2em;
+}
+
+@mixin call_on_me_two() {
+  width: 2em;
+}
+
+@for $i from 1 through $count {
+  item-#{$i} {
+    @if $i < 250 {
+      width: call_on_me;
+    }
+    @else  {
+      width: call_on_me_two;
+    }
+  }
+}

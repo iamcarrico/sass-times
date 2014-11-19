@@ -1,0 +1,19 @@
+@import 'variables';
+
+
+
+
+@for $i from 1 through $count {
+  .item-#{$i} {
+    @if $i < 250 {
+      width: 1em;
+    }
+    @else if $i < 500 {
+      width: 2em;
+    } @else if $i < 750 {
+      width: 3em;
+    } @else {
+      width: 4em;
+    }
+  }
+}

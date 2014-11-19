@@ -1,0 +1,10 @@
+@import 'variables';
+
+
+%call_on_me {
+  width: 2em;
+}
+
+@for $i from 1 through $count {
+  .item-#{$i} { @extend %call_on_me; }
+}
